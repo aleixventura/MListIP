@@ -5,21 +5,24 @@
  */
 package movistarlistip;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Aleix
  */
 public class Finestra extends javax.swing.JFrame {
-
+ArrayList<Canal> canals;
     /**
      * Creates new form Finestra
      */
-    public Finestra() {
+    public Finestra(ArrayList<Canal> c) {
         initComponents();
         buttonGroup1.add(jRadioButton1);
         buttonGroup1.add(jRadioButton2);
         jTextField2.setEnabled(false);
         jTextField3.setEnabled(false);
+        this.canals = c;
     }
 
     /**
@@ -280,7 +283,7 @@ public class Finestra extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Finestra().setVisible(true);
+                new Finestra(null).setVisible(true);
             }
         });
     }

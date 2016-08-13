@@ -12,13 +12,15 @@ import java.util.ArrayList;
  * @author Aleix
  */
 public class MovistarListIP {
-    ArrayList<Canal> canals;
+    static ArrayList<Canal> canals;
     GrupCanal [] gc = {new GrupCanal("Familiar"), new GrupCanal("Autonomics"), new GrupCanal("Series"),new GrupCanal("Cine"),
     new GrupCanal("Esports"), new GrupCanal("Futbol")};
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        canals = new ArrayList<>();
+        Finestra f = new Finestra(canals);
         // TODO code application logic here
     }
 
