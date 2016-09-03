@@ -39,7 +39,7 @@ public class MovistarListIP {
     }
 
     public static void actualitzarcanals() throws MalformedURLException, IOException {
-        String url = "http://github.com";
+        String url = "https://github.com/aleixventura/MListIP/blob/master/src/movistarlistip/canals.json";
         String name = "canals.json";
         //String name = "canals.txt";
         //String name = "canals.xml";
