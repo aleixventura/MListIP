@@ -5,6 +5,14 @@
  */
 package movistarlistip;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 /**
@@ -12,9 +20,12 @@ import java.util.ArrayList;
  * @author Aleix
  */
 public class MovistarListIP {
+
     static ArrayList<Canal> canals;
-    GrupCanal [] gc = {new GrupCanal("Familiar"), new GrupCanal("Autonomics"), new GrupCanal("Series"),new GrupCanal("Cine"),
-    new GrupCanal("Esports"), new GrupCanal("Futbol")};
+
+    GrupCanal[] gc = {new GrupCanal("Familiar"), new GrupCanal("Autonomics"), new GrupCanal("Series"), new GrupCanal("Cine"),
+        new GrupCanal("Esports"), new GrupCanal("Futbol")};
+
     /**
      * @param args the command line arguments
      */
@@ -25,6 +36,31 @@ public class MovistarListIP {
     }
 
     public MovistarListIP() {
+    }
+
+    public static void actualitzarcanals() throws MalformedURLException, IOException {
+        String url = "http://github.com";
+        String name = "canals.json";
+        //String name = "canals.txt";
+        //String name = "canals.xml";
+        File file = new File(name);
+        URLConnection conn = new URL(url).openConnection();
+        conn.connect();
+        System.out.println("\nempezando descarga: \n");
+        System.out.println(">> URL: " + url);
+        System.out.println(">> Nombre: " + name);
+        System.out.println(">> tamaño: " + conn.getContentLength() + " bytes");
+        InputStream in = conn.getInputStream();
+        OutputStream out = new FileOutputStream(file);
+        int b = 0;
+        while (b != -1) {
+            b = in.read();
+            if (b != -1) {
+                out.write(b);
+            }
         }
-    
+        out.close();
+        in.close();
+
+    }
 }
