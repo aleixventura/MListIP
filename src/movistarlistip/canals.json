@@ -2,19 +2,22 @@
     "cananls": [{
             "nom": "La1",
             "grup": "Familiar",
-            "imatge":""
+            "imatge":"",
+            "hd":"false"
         },
         {
             "nom": "La2",
             "grup": "Familiar",
-            "imatge":""
+            "imatge":"",
+            "hd":"false"
 
         }
         ,
         {
             "nom": "Antena3",
             "grup": "Familiar",
-            "imatge":""
+            "imatge":"",
+            "hd":"false"
 
         }
     ]
